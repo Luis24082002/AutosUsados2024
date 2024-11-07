@@ -1,0 +1,41 @@
+:root {
+  --amarillo: #eadb0b;
+  --negro: #000000;
+  --blanco: #ffffff;
+  --rojo: #e10;
+  --gris: #7678;
+  --azul: #081ae1;
+  --anaranjado: #d16f1e;
+}
+.header {
+  text-align: center;
+  justify-content: center;
+  background-color: var(--blanco);
+}
+
+.navegacion__enlace {
+  color: var(--negro);
+  font-size: 3 rem;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+  color: var(--gris);
+}
+
+html {
+  font-size: 62, 5%;
+}
+
+body {
+  background-color: var(--gris);
+  font-size: 2rem;
+  line-height: 1.5;
+}
+img {
+  width: 35%;
+}
+h2 {
+  text-align: center;
+
+  color: var(--negro);
+}
