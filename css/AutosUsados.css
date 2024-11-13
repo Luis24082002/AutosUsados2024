@@ -55,6 +55,34 @@ h2 {
 & :hover img:not(:hover) {
   filter: brightness(20%);
 }
+.carrito-offcanvas {
+  position: fixed;
+  right: -300px; /* Oculto fuera de la vista inicialmente */
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.carrito-offcanvas.active {
+  right: 0; /* Mueve el carrito a la vista */
+}
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close-carrito {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.carrito-items {
+  margin-top: 20px;
+}
 
 .contenido_img {
   width: 800px;

@@ -1,71 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/AutosUsados.css" />
+  <title>AutosUsados2024</title>
+  <style>
     
-    <link rel="stylesheet" href="./css/AutosUsados.css" />
-    <title>AutosUsados2024</title>
-  </head>
-  <body>
     
-    <nav class="navegacion">
-      <a class="navegacion__enlace navegacion__enlace--activo" href="index.html"
-        >INICIO</a
-      >
-      <a class="navegacion__enlace" href="Nosotros.html">NOSOTROS</a>
-      <a class="navegacion__enlace" href="CONTACTOS.html">CONTACTOS</a>
-    </nav>
-    <header class="header">
-      <a href="index.html">
-        <img class="header__logo" src="./img/logo.jpg" alt="Logo Principal" />
-      </a>
-    </header>
-    <main class="contenedor">
-      <h1>CARRO RAV4</h1>
-      <div>
-        <div class="contenido">
-          <img  class="contenido_img"    src="./img/imagen3.jpg" alt="imagen carro3">
-          <h2>
-            PRECIO
-            <p>
-              Maximo precio $35000
-              Rebaja maxima $ 30000
-            </p>
-          </h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-              Cupiditate, eveniet minima temporibus aliquam vero doloribus aperiam odit aut.
-               Reprehenderit libero cumque fugit sit odit delectus hic corrupti alias eos minima.
-               
-            </p>
-          <form  class="formulario">
-            <fieldset>
-              <legend>Completa la Informacion</legend>
-              <div>
-                <label for="txtnombre">Nombre Completo:</label>
-                <input type="text" name="txtnombre" id="txtnombre" required minlength="3" maxlength="50"/>
-              </div>
-              <div>
-                <label for="txttelefono"> Telefono:</label>
-                <input type="tel" name="txttelefono" id="txttelefono"required min="8" max="12"/>
-              </div>
-              <div>
-                <label for="txtemail"> Email:</label>
-                <input type="email" name="txtemail" id="txtemail" required @ />
-              </div>
-             
-              
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="navegacion">
+    <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">INICIO</a>
+    <a class="navegacion__enlace" href="Nosotros.html">NOSOTROS</a>
+    <a class="navegacion__enlace" href="CONTACTOS.html">CONTACTOS</a>
+    <a class="navegacion__enlace" href="#" onclick="toggleCarrito()">CARRITO DE COMPRAS</a>
+  </nav>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html">
+      <img class="header__logo" src="./img/logo.jpg" alt="Logo Principal" />
+    </a>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenedor">
+    <h1>CARRO RAV4</h1>
+    <div>
+      <div class="contenido">
+        <img class="contenido_img" src="./img/imagen3.jpg" alt="imagen carro3">
+        <h2>
+          PRECIO
+          <p>Maximo precio $45000 <br> Rebaja maxima $40000</p>
+        </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, eveniet minima temporibus aliquam vero doloribus aperiam odit aut.</p>
+
+        <!-- Botón para agregar al carrito -->
+        <button onclick="agregarAlCarrito('CARRO RAV4', 45000)">Añadir al Carrito</button>
+
+        <!-- Formulario de contacto -->
+        <form class="formulario">
+          <fieldset>
+            <legend>Completa la Información</legend>
+            <div>
+              <label for="txtnombre">Nombre Completo:</label>
+              <input type="text" name="txtnombre" id="txtnombre" required minlength="3" maxlength="50"/>
+            </div>
+            <div>
+              <label for="txttelefono"> Teléfono:</label>
+              <input type="tel" name="txttelefono" id="txttelefono" required minlength="8" maxlength="12"/>
+            </div>
+            <div>
+              <label for="txtemail"> Email:</label>
+              <input type="email" name="txtemail" id="txtemail" required />
+            </div>
             <input type="submit" value="Enviar" />
-            <input type="reset"value= "Cancelar"/>
+            <input type="reset" value="Cancelar" />
           </fieldset>
         </form>
-          </form>
-        </div>
-    </main>
-    <footer class="footer">
-      <p class="footer__texto">--AUTOS USADOS  Todos Los Derehos Reservados</p>
-    </footer>
-  </body>
+      </div>
+    </div>
+  </main>
+
+  <!-- Carrito off-canvas -->
+  <div id="carrito" class="carrito-offcanvas">
+    <div class="carrito-header">
+      <h2>Carrito de Compras</h2>
+      <span class="close-carrito" onclick="toggleCarrito()">Volver</span>
+    </div>
+    <div class="carrito-items">
+      <!-- Aquí se mostrarán los productos añadidos al carrito -->
+      <p>El carrito está vacío.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__texto">--AUTOS USADOS Todos Los Derechos Reservados</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleCarrito() {
+      const carrito = document.getElementById('carrito');
+      carrito.classList.toggle('active');
+    }
+
+    function agregarAlCarrito(nombre, precio) {
+      const carritoItems = document.querySelector('.carrito-items');
+      const item = document.createElement('div');
+      item.textContent = `${nombre} - $${precio}`;
+      carritoItems.appendChild(item);
+
+      toggleCarrito(); // Abre el carrito automáticamente al agregar un producto
+    }
+  </script>
+</body>
 </html>
