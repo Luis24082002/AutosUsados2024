@@ -55,7 +55,7 @@ h2 {
   border-radius: 5px;
   overflow: hidden;
   text-align: center;
- transition: 3s;
+  transition: 3s;
 }
 
 .Productos:hover {
@@ -123,13 +123,12 @@ h2 {
   top: 0;
   width: 300px;
   height: 100%;
-  background-color:#fff;
+  background-color: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
   padding: 20px;
   overflow-y: auto;
   z-index: 1000;
-  
 }
 .carrito-offcanvas.active {
   right: 0; /* Mueve el carrito a la vista */
@@ -150,11 +149,10 @@ h2 {
   .carrito-offcanvas {
     width: 50%; /* Ocupa el 80% del ancho en pantallas medianas */
   }
-  .navegacion{
-    display:contents;
+  .navegacion {
+    display: contents;
     .navegacion {
       flex-direction: column;
-
     }
   }
 }
@@ -268,4 +266,3 @@ body {
   text-align: center;
   padding: 15px;
 }
-
